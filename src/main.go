@@ -37,6 +37,7 @@ func main() {
 		message := c.PostForm("message")
 		fmt.Printf("id:%s; page:%s; name:%s; message:%s", id, page, name, message)
 	})
+	r.MaxMultipartMemory = 8 << 20
 	r.POST("/upload", func(c *gin.Context){
 		file, _ := c.FormFile("file")
 		fmt.Printf(file.Filename)
