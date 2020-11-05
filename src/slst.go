@@ -30,5 +30,7 @@ func main() {
 	data := []byte("golang")
 	go printData(&wg, data[:3])
 	go printData(&wg, data[3:])
+	var s string
+	fmt.Printf("%q\n", s)
 	wg.Wait()
 }
